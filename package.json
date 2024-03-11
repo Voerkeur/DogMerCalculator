@@ -1,0 +1,45 @@
+{
+  "name": "dog-mer-calculator",
+  "version": "1.0.0",
+  "description": "The DOG MER Calculator is a software library designed to calculate the energy requirements (MER - Maintenance Energy Requirements and DER - Daily Energy Requirements) for dogs.",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/esm5/index.js",
+  "es2015": "./lib/esm2015/index.js",
+  "typings": "./lib/types/index.d.ts",
+  "scripts": {
+    "build": "npm run build:commonjs && npm run build:es2015 && npm run build:esm5 && npm run build:types",
+    "build:commonjs": "tsc --module commonjs --target es2018 --outDir ./lib/commonjs",
+    "build:es2015": "tsc --module ES2015 --target es2015 --outDir ./lib/es2015",
+    "build:esm5": "tsc --module ES2015 --target ES5 --outDir ./lib/esm5",
+    "build:types": "tsc --target es2018 --declaration --emitDeclarationOnly --outDir ./lib/types",
+    "bundle": "parcel build src/MerCalculator.ts --no-minify --global MerCalculator",
+    "test": "ts-node test/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Voerkeur/DogMerCalculator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Voerkeur/DogMerCalculator/issues"
+  },
+  "keywords": [
+    "dog",
+    "maintenance",
+    "energy",
+    "requirments",
+    "mer",
+    "calculator"
+  ],
+  "author": "voerkeur.nl",
+  "license": "MIT",
+  "homepage": "https://voerkeur.nl/open-source/dogmercalculator/",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.4",
+    "undici-types": "^6.6.2"
+  }
+}

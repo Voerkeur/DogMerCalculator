@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./lib/commonjs",
+    "strict": true,
+    "target": "ES2018",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+  },
+  "include": ["src", "test/test.ts", "test/web.ts"],
+  "exclude": ["node_modules", "test/test.ts"]
+}
